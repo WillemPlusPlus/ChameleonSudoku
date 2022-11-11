@@ -26,13 +26,10 @@ const props = {
         h: 50,
         class: "square"
     }
-
 }
+
 const setTags = (e, tags) => {
-    console.log(tags)
     for(const [k,v] of Object.entries(tags)){
-        console.log(k)
-        console.log(v)
         e.setAttribute(k, v);
     }
 }
@@ -59,6 +56,8 @@ for(let yi = 0; yi<9; yi++){
     let sqaure = {
         x:xi * props.square.w + props.square.xOffset,
         y:yi * props.square.h + props.square.yOffset,
+        width: props.square.w-5,
+        height: props.square.h-5,
         class: props.square.class
     }
     createElement(nodeGrid,"rect",sqaure, props.NS_SVG)
